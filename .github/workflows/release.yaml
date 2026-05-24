@@ -264,6 +264,9 @@
               # Tarball package
               tar -zcvf Kazumi_linux_${{ env.tag }}_amd64.tar.gz -C build/linux/x64/release/bundle .
 
+              # Extract version from pubspec.yaml for Debian control
+              VERSION=$(grep '^version:' pubspec.yaml | head -1 | awk '{print $2}' | cut -d'+' -f1)
+
               # Debian package
               mkdir Kazumi_linux_${{ env.tag }}_amd64
               cd Kazumi_linux_${{ env.tag }}_amd64
@@ -278,7 +281,7 @@
               cat>DEBIAN/control<<EOF
               Maintainer: madoka773 <valigarmanda55@gmail.com>
               Package: Kazumi
-              Version: ${{ env.tag }}
+              Version: ${VERSION}
               Section: x11
               Priority: optional
               Architecture: amd64
