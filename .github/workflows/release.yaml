@@ -107,6 +107,8 @@
         name: "Release for windows"
         runs-on: "windows-latest"
         needs: [flutter-build-android, flutter-build-ios, flutter-build-linux, flutter-build-macos] 
+        outputs:
+          signing_enabled: ${{ steps.check_signpath.outputs.enabled }}
         permissions: write-all
     
         steps:
@@ -448,13 +450,16 @@
             run: cp windows_zip_signed_outputs/* Kazumi_windows_${{ env.tag }}.zip
 
           - name: Download windows msix build file
+            if: ${{ needs.flutter-build-windows.outputs.signing_enabled == 'true' }}
             uses: actions/download-artifact@v4
             with:
               name: windows_msix_signed_outputs
               path: windows_msix_signed_outputs  
           - name: List files in windows_msix_signed_outputs directory
+            if: ${{ needs.flutter-build-windows.outputs.signing_enabled == 'true' }}
             run: ls -l windows_msix_signed_outputs   
           - name: Copy windows build file to root
+            if: ${{ needs.flutter-build-windows.outputs.signing_enabled == 'true' }}
             run: cp windows_msix_signed_outputs/* Kazumi_windows_${{ env.tag }}.msix
 
           - name: Download android build file
