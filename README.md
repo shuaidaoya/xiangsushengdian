@@ -176,6 +176,14 @@ A: 本项目编译需要良好的网络环境, 除了由 Google 托管的 Flutte
 | F-Droid / Flathub / AUR 包名 | 第三方分发渠道标识，需额外申请才能变更 |
 
 ## 代码签名策略 (Code signing policy)
+
+本项目当前**未配置代码签名**。Windows 端下载运行时会触发 SmartScreen 警告，属于正常现象：
+
+- **解决方案**：点击"更多信息" → "仍要运行"即可正常使用
+- **自行签名**：如需消除警告，可申请 [SignPath](https://about.signpath.io/) 免费开源签名（需项目认证），或使用自签名证书
+
+原项目 [Predidit/Kazumi](https://github.com/Predidit/Kazumi) 享有 SignPath 赞助签名，本派生版本暂未获得独立签名许可。
+
 提交者: [Contributors](https://github.com/shuaidaoya/Nizumi/graphs/contributors)
 审阅者: [Owner](https://github.com/shuaidaoya)
 
