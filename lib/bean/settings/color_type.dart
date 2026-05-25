@@ -11,5 +11,6 @@ final List<Map<String, dynamic>> colorThemeTypes = [
   {'color': Colors.yellow, 'label': '黄色'},
   {'color': Colors.orange, 'label': '橙色'},
   {'color': Colors.deepOrange, 'label': '深橙色'},
+  {'color': const Color(0xffaa2d00), 'label': 'Airtable'},
   {'color': const Color(0xff0070f3), 'label': 'Vercel'},
 ];
