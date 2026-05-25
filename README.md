@@ -184,8 +184,8 @@ A: 本项目编译需要良好的网络环境, 除了由 Google 托管的 Flutte
 
 原项目 [Predidit/Kazumi](https://github.com/Predidit/Kazumi) 享有 SignPath 赞助签名，本派生版本暂未获得独立签名许可。
 
-提交者: [Contributors](https://github.com/shuaidaoya/Nizumi/graphs/contributors)
-审阅者: [Owner](https://github.com/shuaidaoya)
+~~提交者: [Contributors](https://github.com/shuaidaoya/Nizumi/graphs/contributors)~~
+~~审阅者: [Owner](https://github.com/shuaidaoya)~~
 
 ## 致谢
 
