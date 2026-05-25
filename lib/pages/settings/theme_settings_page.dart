@@ -299,10 +299,10 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage> {
                                 children: [
                                   ...colorThemes.map(
                                     (e) {
-                                      final index = colorThemes.indexOf(e);
+                                      final isDefault = e['label'] == '默认';
                                       return GestureDetector(
                                         onTap: () {
-                                          index == 0
+                                          isDefault
                                               ? resetTheme()
                                               : setTheme(e['color']);
                                           KazumiDialog.dismiss();
@@ -317,7 +317,7 @@ class _ThemeSettingsPageState extends State<ThemeSettingsPage> {
                                                       defaultThemeColor ||
                                                   (defaultThemeColor ==
                                                           'default' &&
-                                                      index == 0)),
+                                                      isDefault)),
                                             ),
                                             Text(e['label']),
                                           ],
